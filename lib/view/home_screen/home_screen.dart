@@ -4,7 +4,6 @@ import 'package:background_color/controller/home_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -15,31 +14,61 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
- final providerObj = Provider.of<HomeScreenController>(context);
+    final providerObj = Provider.of<HomeScreenController>(context);
 
-    return Scaffold(backgroundColor: providerObj.scaffoldColor,
-  //  floatingActionButton: FloatingActionButton(onPressed: () {
-  //    Provider.of<HomeScreenController>(context,listen: false).increment();
-  //  },),
-  body: Center(child: Column(mainAxisAlignment: MainAxisAlignment.start,children: [
-    GestureDetector(onTap: () {
-      Provider.of<HomeScreenController>(context,listen: false).onColorChanged(Colors.white);
-    },
-      child: Container(height: 50,width: 100,
-      color: Colors.white,),),    GestureDetector(onTap: () {
-      Provider.of<HomeScreenController>(context,listen: false).onColorChanged(Colors.black);
-    },
-      child: Container(height: 50,width: 100,
-      color: Colors.black,),),    GestureDetector(onTap: () {
-      Provider.of<HomeScreenController>(context,listen: false).onColorChanged(Colors.red);
-    },
-      child: Container(height: 50,width: 100,
-      color: Colors.red,),),    GestureDetector(onTap: () {
-      Provider.of<HomeScreenController>(context,listen: false).onColorChanged(Colors.blue);
-    },
-      child: Container(height: 50,width: 100,
-      color: Colors.blue,),)
-  ],),),
+    return Scaffold(
+      backgroundColor: providerObj.scaffoldColor,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Provider.of<HomeScreenController>(context, listen: false)
+                    .onColorChanged(Colors.white);
+              },
+              child: Container(
+                height: 50,
+                width: 100,
+                color: Colors.white,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Provider.of<HomeScreenController>(context, listen: false)
+                    .onColorChanged(Colors.black);
+              },
+              child: Container(
+                height: 50,
+                width: 100,
+                color: Colors.black,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Provider.of<HomeScreenController>(context, listen: false)
+                    .onColorChanged(Colors.red);
+              },
+              child: Container(
+                height: 50,
+                width: 100,
+                color: Colors.red,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Provider.of<HomeScreenController>(context, listen: false)
+                    .onColorChanged(Colors.blue);
+              },
+              child: Container(
+                height: 50,
+                width: 100,
+                color: Colors.blue,
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
